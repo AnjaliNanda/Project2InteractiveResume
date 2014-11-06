@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Comapatible" content="IE=edge">
+	<meta name="description" content="Udacity Nanodegree, Frontend Web Developer, Project2, Anjali Nanda">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Anjali Nanda, Project2, Nanodegree</title>
+	<link rel="stylesheet" href="css/normalize.css"><!--src="normalize..." so that website will work same across all the browsers -->
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+	<link rel ="stylesheet" href="css/main.css">
+	<link href='http://fonts.googleapis.com/css?family=Noticia+Text' rel='stylesheet' type='text/css'>
+	<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places"></script>
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script src="bootstrap/js/bootstrap.min.js"></script>
+	<script src="js/jQuery.js"></script>
+	<script src="js/helper.js"></script>
+	
+</head>
+
+<body>
+	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-main">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+        			<span class="icon-bar"></span>
+        			<span class="icon-bar"></span>
+      			</button>
+      			 <a class="navbar-brand" href="#">Anjali Nanda</a>
+    		</div>
+
+			<div class="collapse navbar-collapse" id="navbar-collapse-main">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#home">HOME</a></li>
+					<li><a href="#resume">RESUME</a></li>
+					<li><a href="#theFooter">CONTACT</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<div id="home">
+		<div class="container">
+			<header id="mainHeader">
+				<div class="row">
+					<div class="col-md-6">
+						<div id="header1" class="text-center"> 
+						</div>
+					</div>
+				</div>
+			</header>
+		
+			<section id ="mainContent">
+				<div class="row">
+					<div class="col-md-6">	
+						<div id="biopic">
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div id="WelcomeMsg1"></div>
+						<div id="WelcomeMsg2"></div>
+						
+						<article id="imgNav">
+							<div class="row grow">
+								<div class="col-md-4">
+									<div id="imgRed"></div>
+								</div>
+								<div class="col-md-4">
+									<div id="imgBlue"></div>
+								</div>
+								<div class="col-md-4">
+									<div id="imgOrange"></div>
+								</div>
+							</div>
+						</article>
+						<article>
+							<div class="row">
+								<div id="WelcomeMsg3">
+								</div>								
+							</div>
+						</article>
+					</div>
+				</div>
+			</section>
+		</div> <!--close container -->
+	</div> <!--close home -->
+
+
+<!--Resume Section -->
+	<div id="resume">
+		<div class="container">
+			<header id="resumeHeader">
+				<div class="row">
+					<div class="col-md-12">
+						<hgroup>
+						<h1 id="titleResume">RESUME</h1>
+						</hgroup>
+					</div>
+				</div>
+			</header>
+
+			<section>
+				<div class="row">			
+					<article> <!--Work Experience -->
+						<div class="col-sm-8">
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h2 class="panel-title">Work Experience</h2>
+								</div>
+								<div class="panel-body">
+									<div id="workExperience">
+									</div>
+								</div>
+							</div>
+						</div>
+					</article>
+					<aside id="Skills"> <!-- Skills -->
+						<div class="col-sm-4">
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h5 class="panel-title">Skills at a Glance</h5>
+								</div>
+								<div class="panel-body">
+									<div id="skills">
+									</div>
+								</div>
+							</div>
+						</div>
+					</aside>
+				</div>
+
+				<div class="row">
+					<article id="education1"><!-- Education -->
+						<div class="col-sm-8">
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h2 class="panel-title">Education</h2>
+								</div>
+								<div class="panel-body" id="education">
+								</div>
+							</div>
+						</div>
+					</article>
+					<aside id="wordWrap"><!-- online courses -->
+						<div class="col-sm-4">
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h2 class="panel-title" id="onlineCoursesTitle"></h2>
+								</div>
+								<div class="panel-body" id="onlineCourses">
+								</div>
+							</div>
+						</div>
+					</aside>
+				</div>
+			</section>
+		</div>
+	</div>
+
+<!-- Map -->
+	<div id="theFooter map">
+		<div class="container">
+			<div class="row">
+				<article> <!--map -->
+					<div id="mapDiv">
+	      				<h2>Where I've Lived and Worked</h2>
+	    			</div>
+				</article>
+			</div>
+		</div>
+	</div>
+<div id="bottomContainer">
+	<div id="theFooter">
+		<div class="container">
+			<div class="row text-center">
+				<div class="col-sm-3 col-xs-6">
+					<i class="glyphicon glyphicon-envelope"> </i>
+					<h4>Contact:</h4>
+					<h6>anjalisubrat@gmail.com</h6>
+				</div>
+				<div class="col-sm-3 col-xs-6">
+					<i class="glyphicon glyphicon-phone-alt"> </i>
+					<h4>Call:</h4>
+					<h6>T:518-253-4742</h6>
+				</div>
+				<div class="col-sm-3 col-xs-6">
+					<i class="glyphicon glyphicon-plus-sign"> </i>
+					<h6>Follow me</h6>
+				</div>
+				<div class="col-sm-3 col-xs-6">
+					<i class="glyphicon glyphicon-copyright-mark"> </i>
+					<h6>2014 Anjali Nanda</h6>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+	
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	 <script src="js/resumeBuilder.js"></script>
+
+	 <script type="text/javascript">
+		 if(document.getElementsByClassName("flex-item").length === 0) {
+	     document.getElementById("topContacts").style.display = "none";
+		 }
+		 if(document.getElementsByTagName("h1").length === 0) {
+		 document.getElementById("header").style.display= "none";
+		 }
+		 if(document.getElementsByClassName("work-entry").length === 0) {
+		 document.getElementById("workExperience").style.display= "none";
+		 }
+		 if(document.getElementsByClassName("project-entry").length === 0) {
+		 document.getElementById("projects").style.display= "none";
+		 }
+		 if(document.getElementsByClassName("education-entry").length === 0) {
+		 document.getElementById("education").style.display= "none";
+
+		if(document.getElementsByClassName("skills-entry").length === 0) {
+		document.getElementById("skillsChart").style.display= "none";
+		}
+		if(document.getElementsByClassName("flex-item").length === 0) {
+		document.getElementById("letsConnect").style.display= "none";
+
+		if(document.getElementById("map") == undefined) {
+		document.getElementById("mapDiv").style.display= "none";
+		}
+    </script>
+
+</body>
+</html>
