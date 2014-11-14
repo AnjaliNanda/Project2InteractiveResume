@@ -26,18 +26,16 @@ var bio = {
 		        "MS Office - MS PPT, MS XL",
 		        "Visual Studio - Asp.Net",
 		        "C#",
-		        "C",
-		        "Visual Studio",
-		        "MSSQL",
-		        "Databases- MS Access, SQL",
+		        "Databases- MS Access, MSSQL",
 		    ],
 
 		    "bioPicbg": ["images/MypicN.png"],
-		    "bioPicsm":["images/MypicSm11.png"],
-		    "imgNavRed":["images/yellowbx.png"],
-		    "imgNavBlue":["images/brownbx.png"],
-		    "imgNavOrange":["images/yellowbx2.png"],
-
+		    "bioPicsm": ["images/MypicSm11.png"],
+		    "imgNavRed": ["images/yellowbx.png"],
+		    "imgNavBlue": ["images/brownbx.png"],
+		    "imgNavOrange": ["images/yellowbx2.png"],
+		 	"linkedinlink" : "http://www.linkedin.com/pub/anjali-nanda/7/293/903",
+		 	"githublink": "https://github.com/AnjaliNanda/anjalinanda.github.com",		    
 
 		    display: function(){
 		    	var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
@@ -64,53 +62,34 @@ var bio = {
 		    	var formattedWelcomeMsg3 = HTMLWelcomeMsg3.replace("%data%", bio.WelcomeMsg3);
 		    	$("#WelcomeMsg3").append(formattedWelcomeMsg3);
 
-
 		    	if(bio.skills.length>0) {
-		    	$("#header").append(HTMLskillsStart);
+		    	$("#skillsstart").append(HTMLskillsStart);
 		    		for (var i in bio.skills) {
 	        			var formattedSkill = HTMLskills.replace("%data%",bio.skills[i]);
 	        			$("#skills").append(formattedSkill);
 	        		}
 	        	}
-		    },
+
+	        	var formattedEmailid = HTMLemailid.replace("%data%", bio.contacts.email);
+		    	$("#emailid").append(formattedEmailid);
+		    	var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
+		    	$("#mobile").append(formattedMobile);
+		    	
+		    	$("#followMe").append(HTMLfollowme);
+		    	var formattedLinkedin = HTMLlinkedin.replace("%data%", bio.linkedinlink);
+		    	$("#linkedin").append(formattedLinkedin);
+		    	var formattedGithub = HTMLgithub.replace("%data%", bio.githublink);
+		    	$("#github").append(formattedGithub);
+
+		    	$("#copyright").append(HTMLcopyright);
+
+	        },
 };
 
 bio.display();
 
 var education= {
-	schooldisplay: function() {
 
-	    for (var i in education.schools) {
-	      $("#education").append(HTMLschoolStart);
-
-	       var formatName = HTMLschoolName.replace("%data%",education.schools[i].name);
-	       $(".education-entry:last").append(formatName);
-	       var formatCity = HTMLschoolLocation.replace("%data%",education.schools[i].city);
-	       $(".education-entry:last").append(formatCity);
-	       var formatDegree = HTMLschoolDegree.replace("%data%",education.schools[i].degree);
-	       $(".education-entry:last").append(formatDegree);
-	       var formatMajor = HTMLschoolMajor.replace("%data%",education.schools[i].major);
-	       $(".education-entry:last").append(formatMajor);
-	       var formatYears = HTMLschoolDates.replace("%data%",education.schools[i].years);
-	       $(".education-entry:last").append(formatYears);
-	    }
-	   },
-
-	onlineCoursesdisplay: function() {
-		$("#onlineCoursesTitle").append(HTMLonlineClasses);
-	    for(var j in education.onlineCourses){
-	    	
-
-	       var formatTitle = HTMLonlineTitle.replace("%data%",education.onlineCourses[j].title);
-	       $("#onlineCourses").append(formatTitle);
-	       var formatSchool = HTMLonlineSchool.replace("%data%",education.onlineCourses[j].school);
-	       $("#onlineCourses").append(formatSchool);
-	       var formatDate = HTMLonlineDates.replace("%data%",education.onlineCourses[j].dates);
-	       $("#onlineCourses").append(formatDate);
-	       var formatURL = HTMLonlineURL.replace("%data%",education.onlineCourses[j].url);
-	       $("#onlineCourses").append(formatURL);
-	    }
-	  },
 	"schools": [
 		{
 			"name":"JRN University",
@@ -166,7 +145,39 @@ var education= {
 			"dates": 2014,
 			"url": "https://www.udacity.com/course/ud804"
 		}
-	]
+	],
+	
+	schooldisplay: function() {
+		$("#education").append(HTMLschoolStart);
+	    
+	    for (var i in education.schools) {
+	       var formatName = HTMLschoolName.replace("%data%",education.schools[i].name);
+	       $(".education-entry:last").append(formatName);
+	       var formatCity = HTMLschoolLocation.replace("%data%",education.schools[i].city);
+	       $(".education-entry:last").append(formatCity);
+	       var formatDegree = HTMLschoolDegree.replace("%data%",education.schools[i].degree);
+	       $(".education-entry:last").append(formatDegree);
+	       var formatMajor = HTMLschoolMajor.replace("%data%",education.schools[i].major);
+	       $(".education-entry:last").append(formatMajor);
+	       var formatYears = HTMLschoolDates.replace("%data%",education.schools[i].years);
+	       $(".education-entry:last").append(formatYears);
+	    }
+	},
+
+	onlineCoursesdisplay: function() {
+		$("#onlineCourseStart").append(HTMLonlineCourse);
+		
+	    for(var j in education.onlineCourses) {
+	       var formatTitle = HTMLonlineTitle.replace("%data%",education.onlineCourses[j].title);
+	       $("#onlineCourses").append(formatTitle);
+	       var formatSchool = HTMLonlineSchool.replace("%data%",education.onlineCourses[j].school);
+	       $("#onlineCourses").append(formatSchool);
+	       var formatDate = HTMLonlineDates.replace("%data%",education.onlineCourses[j].dates);
+	       $("#onlineCourses").append(formatDate);
+	       var formatURL = HTMLonlineURL.replace("%data%",education.onlineCourses[j].url);
+	       $("#onlineCourses").append(formatURL);
+	    }
+	},
 };
 
 education.schooldisplay();
@@ -178,10 +189,10 @@ var work= {
 	    for (var i in work.jobs) {
 	      $("#workExperience").append(HTMLworkStart);
 
-	      var formatEmployer = HTMLworkEmployer.replace("%data%",work.jobs[i].employer);
-	       $(".work-entry:last").append(formatEmployer);
 	      var formatJobtitle = HTMLworkTitle.replace("%data%",work.jobs[i].title);
 	       $(".work-entry:last").append(formatJobtitle);
+	      var formatEmployer = HTMLworkEmployer.replace("%data%",work.jobs[i].employer);
+	       $(".work-entry:last").append(formatEmployer);
 	      var formatLocation = HTMLworkLocation.replace("%data%",work.jobs[i].location);
 	       $(".work-entry:last").append(formatLocation);
 	      var formatDates = HTMLworkDates.replace("%data%",work.jobs[i].dates);
@@ -224,40 +235,73 @@ var work= {
 };
 
 work.display();
+$("#mapDiv").append(googleMap);
 
 var project= {
 		display: function(){
-			for (var i in project.projects) {
+			for (var i=0; i<project.projects.length; i++) {
       			$("#projects").append(HTMLprojectStart);
 
 		      var formatTitle = HTMLprojectTitle.replace("%data%",project.projects[i].title);
 		      $(".project-entry:last").append(formatTitle);
-
 		      var formatDates = HTMLprojectDates.replace("%data%",project.projects[i].dates);
 		      $(".project-entry:last").append(formatDates);
-
 		      var formatDescription = HTMLprojectDescription.replace("%data%",project.projects[i].description);
 		      $(".project-entry:last").append(formatDescription);
 
-		      if(project.projects[i].images.length>0){
-		      	for (image in project.projects[i].images){
+		     if(project.projects[i].images.length>0){
+		      	for (var image in project.projects[i].images){
 		      		var formattedImage = HTMLprojectImage.replace("%data%",project.projects[i].images[image]);
 		      		$(".project-entry:last").append(formattedImage);
 		      	}
 		      }
 		    }
 		},
+
 		"projects": [
-			{
-				"title": "Personal Portfolio",
-				"dates":"October 2014",
-				"description":"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium, officiis ea. Velit officia nobis aliquam asperiores, voluptatem facilis molestiae ea possimus provident voluptatibus deserunt consequatur iure, nostrum alias, minima, sed!",
-				"images": ["images/fry.jpg"]
-			}	
-		] 
-			
+		    {
+		      "title" : "<a href='https://github.com/AnjaliNanda/Project1' target='_blank'>Portfolio Mockup to HTML</a>",
+		      "dates" : "October 2014",
+		      "images" : ["images/project1.png","images/project1A.png","images/project1C.png"],
+		      "description" : "Udacity Project 1 - HTML/CSS Mockup"
+		    },
+		    {
+		      "title" : "<a href='http://anjalinanda.github.io/' target='_blank'>Interactive Resume</a>",
+		      "dates" : "November 2014",
+		      "description" : "Udacity Project 2 - Javascript My Resume",
+		      "images" : ["images/Project2.png"]
+		    },
+		    {
+		      "title" : "Classic Arcade Game Clone",
+		      "dates" : "December 2014",
+		      "description" : "Udacity Project 3 - Object Oriented Javascript",
+		      "images" : ["images/Project2.png"]
+		    },
+		    {
+		      "title" : "Website Optimisation",
+		      "dates" : "January 2015",
+		      "description" : "Udacity Project 4 - Website Optimisation",
+		      "images" : ["images/Project2.png"]
+		    },
+		    {
+		      "title" : "Neighbourhood Map",
+		      "dates" : "February 2015",
+		      "description" : "Udacity Project 5 - Javascript Design Patterns",
+		      "images" : ["images/Project2.png"]
+		    },
+		    {
+		      "title" : "Project 6",
+		      "dates" : "March 2015",
+		      "description" : "Udacity Project 6",
+		      "images" : ["images/Project2.png"]
+		    },
+		    {
+		      "title" : "Project 7",
+		      "dates" : "April 2015",
+		      "description" : "Udacity Project 7",
+		      "images" : ["images/Project2.png"]
+		    }
+		]
 	};
 
-project.display();
-
-$("#mapDiv").append(googleMap);
+	project.display();

@@ -1,17 +1,5 @@
-/*
 
-This file contains all of the code running in the background that makes resumeBuilder.js possible. We call these helper functions because they support your code in this course.
-
-Don't worry, you'll learn what's going on in this file throughout the course. You won't need to make any changes to it until you start experimenting with inserting a Google Map in Problem Set 3.
-
-Cameron Pittman
-*/
-
-
-/*
-These are HTML strings. As part of the course, you'll be using JavaScript functions
-replace the %data% placeholder text you see in them.
-*/
+//bio  
 var HTMLheaderName = "<h1 class='titleName'>%data%</h1>";
 var HTMLheaderRole = "<h6 class='subtitleRole'>%data%</h6>";
 
@@ -24,23 +12,14 @@ var HTMLWelcomeMsg2 = "<h4 class='fontAbtMe'>%data%</h4>";
 var HTMLimgRed = "<a href='#resume'> <img src='%data%' class='img-padding img-circle img-responsive' alt='Resume' /></a>";
 var HTMLimgBlue = "<a href='#education1'><img src='%data%' class='img-padding img-circle img-responsive' alt='Work' /></a>";
 var HTMLimgOrange = "<a href='#Skills'><img src='%data%' class='img-padding img-circle img-responsive' alt='Skills' /></a>";
-
 var HTMLWelcomeMsg3 ="<br><p>%data%</p>";
 
-var HTMLcontactGeneric = "<li class='flex-item'><span class='orange-text'>%contact%</span><span class='white-text'>%data%</span></li>";
-var HTMLmobile = "<li class='flex-item'><span class='orange-text'>mobile</span><span class='white-text'>%data%</span></li>";
-var HTMLemail = "<li class='flex-item'><span class='orange-text'>email</span><span class='white-text'>%data%</span></li>";
-var HTMLtwitter = "<li class='flex-item'><span class='orange-text'>twitter</span><span class='white-text'>%data%</span></li>";
-var HTMLgithub = "<li class='flex-item'><span class='orange-text'>github</span><span class='white-text'>%data%</span></li>";
-var HTMLblog = "<li class='flex-item'><span class='orange-text'>blog</span><span class='white-text'>%data%</span></li>";
-var HTMLlocation = "<li class='flex-item'><span class='orange-text'>location</span><span class='white-text'>%data%</span></li>";
-
-
-
-
-var HTMLskillsStart = "<h3 id='skillsH3'>Skills at a Glance:</h3><ul id='skills' class='flex-box'></ul>";
+//Skills Panel
+var HTMLskillsStart = "<h3 class='panel-title'>Skills at a Glance:</h3>";
 var HTMLskills = "<li class='flex-item'><span class='white-text'>%data%</span></li>";
 
+
+//work
 var HTMLworkStart = "<div class='work-entry'></div>";
 var HTMLworkEmployer = "<div class='subtitle'>%data%</div>";
 var HTMLworkTitle = "<div class='title'> %data%</div>";
@@ -48,12 +27,14 @@ var HTMLworkDates = "<div class='date-text'>%data%</div>";
 var HTMLworkLocation = "<div class='location-text'>%data%</div>";
 var HTMLworkDescription = "<p>%data%</p><br>";
 
+//projects
 var HTMLprojectStart = "<div class='project-entry'></div>";
-var HTMLprojectTitle = "<a href='#'>%data%</a>";
+var HTMLprojectTitle = "<a href='#' class='title'>%data%</a>";
 var HTMLprojectDates = "<div class='date-text'>%data%</div>";
-var HTMLprojectDescription = "<p><br>%data%</p>";
-var HTMLprojectImage = "<img src='%data%'>";
+var HTMLprojectDescription = "<p>%data%</p>";
+var HTMLprojectImage = "<img src='%data%' alt='projectimg' />";
 
+//education - school
 var HTMLschoolStart = "<div class='education-entry'></div>";
 var HTMLschoolName = "<div class='title'>%data%</div>";
 var HTMLschoolDegree = "<div class='subtitle'> %data%</div>";
@@ -61,31 +42,35 @@ var HTMLschoolDates = "<div class='date-text'>%data%</div><br>";
 var HTMLschoolLocation = "<div class='location-text'>%data%</div>";
 var HTMLschoolMajor = "<em>Major: %data%</em><br>";
 
-var HTMLonlineClasses = "<h3>Online Courses</h3>";
+//education - online courses
+var HTMLonlineCourse = "<h3 class='panel-title'>Online Courses</h3>";
 var HTMLonlineTitle = "<div class='title'>%data%</div>";
 var HTMLonlineSchool = "<div class='subtitle'>%data%</div>";
 var HTMLonlineDates = "<div class='date-text'>%data%</div>";
 var HTMLonlineURL = "<a href='#' class='urlformat'>%data%</a><br>";
 
-var internationalizeButton = "<button>Internationalize</button>";
+
 var googleMap = "<div id='map'></div>";
 
+//footer Contacts
+var HTMLemailid = "<i class='glyphicon glyphicon-envelope'></i><h4>Contact:</h4><h6>%data%</h6>";
+var HTMLmobile = "<i class='glyphicon glyphicon-phone-alt'></i><h4>Call:</h4><h6>%data%</h6>";
+var HTMLfollowme = "<i class='glyphicon glyphicon-plus-sign'></i><h6>Follow me:</h6>";
+var HTMLlinkedin = "<a href='%data%' target='_blank'><img src='https://static.licdn.com/scds/common/u/img/webpromo/btn_in_20x15.png' class='followlogo' alt='mylinkedin'/></a>"
+var HTMLgithub = "<a href='%data%' target='_blank'><img src='images/GitHub.png' alt='mygithub'/></a>";
+var HTMLcopyright = "<i class='glyphicon glyphicon-copyright-mark'></i><h6>2014 Anjali Nanda</h6>"
 
-/*
+/*var internationalizeButton = "<button>Internationalize</button>";
+
 The International Name challenge in Lesson 2 where you'll create a function that will need this helper code to run. Don't delete! It hooks up your code to the button you'll be appending.
-*/
+
 $(document).ready(function() {
   $('button').click(function() {
     var iName = inName() || function(){};
     $('#name').html(iName);  
   });
-})
+})*/
 
-
-
-/*
-The next few lines about clicks are for the Collecting Click Locations quiz in Lesson 2.
-*/
 clickLocations = [];
 
 function logClicks(x,y) {
@@ -101,9 +86,6 @@ function logClicks(x,y) {
 $(document).click(function(loc) {
   // your code goes here!
 });
-
-
-
 /*
 This is the fun part. Here's where we generate the custom Google Map for the website.
 See the documentation below for more details.
@@ -123,33 +105,18 @@ function initializeMap() {
     disableDefaultUI: true
   };
 
-  // This next line makes `map` a new Google Map JavaScript Object and attaches it to
-  // <div id="map">, which is appended as part of an exercise late in the course.
   map = new google.maps.Map(document.querySelector('#map'), mapOptions);
 
 
-  /*
-  locationFinder() returns an array of every location string from the JSONs
-  written for bio, education, and work.
-  */
   function locationFinder() {
-    
-    // initializes an empty array
     var locations = [];
-
-    // adds the single location property from bio to the locations array
     locations.push(bio.contacts.location);
-
     locations.push(bio.location);
     
-    // iterates through school locations and appends each location to
-    // the locations array
     for (var school in education.schools) {
       locations.push(education.schools[school].location);
     }
 
-    // iterates through work locations and appends each location to
-    // the locations array
     for (var job in work.jobs) {
       locations.push(work.jobs[job].location);
     }
@@ -157,11 +124,7 @@ function initializeMap() {
     return locations;
   }
 
-  /*
-  createMapMarker(placeData) reads Google Places search results to create map pins.
-  placeData is the object returned from search results containing information
-  about a single location.
-  */
+ 
   function createMapMarker(placeData, text) {
 
     // The next lines save location data from the search result object to local variables
@@ -177,31 +140,20 @@ function initializeMap() {
       title: name
     });
     
-    // infoWindows are the little helper windows that open when you click
-    // or hover over a pin on a map. They usually contain more information
-    // about a location.
     var infoWindow = new google.maps.InfoWindow({
       content: name 
         });
 
-    // hmmmm, I wonder what this is about...
     google.maps.event.addListener(marker, 'click', function() {
         infoWindow.open(map,marker);
         console.log(marker);
     });
 
-    // this is where the pin actually gets added to the map.
-    // bounds.extend() takes in a map location object
     bounds.extend(new google.maps.LatLng(lat, lon));
-    // fit the map to the new marker
     map.fitBounds(bounds);
-    // center the map
     map.setCenter(bounds.getCenter());
   }
 
-  /*
-  callback(results, status) makes sure the search returned results for a location.
-  If so, it creates a new map marker for that location.*/
   
   function callback(results, status) {
     if (status == google.maps.places.PlacesServiceStatus.OK) {
@@ -209,57 +161,88 @@ function initializeMap() {
     }
   }
 
-  /*
-  pinPoster(locations) takes in the array of locations created by locationFinder()
-  and fires off Google place searches for each location
-  */
   function pinPoster(locations) {
-
-    // creates a Google place search service object. PlacesService does the work of
-    // actually searching for location data.
     var service = new google.maps.places.PlacesService(map);
-    
-    // Iterates through the array of locations, creates a search object for each location
-    for (place in locations) {
-
-      // the search request object
-      var request = {
-        query: locations[place],
-      };
-      
-
-      // Actually searches the Google Maps API for location data and runs the callback 
-      // function with the search results after each search.
-      service.textSearch(request, function(results, status){
-        if (status == google.maps.places.PlacesServiceStatus.OK) {
-          createMapMarker(results[0])
-        }
-      });
+      for (place in locations) {
+        var request = {
+          query: locations[place],
+        };
+        service.textSearch(request, function(results, status){
+          if (status == google.maps.places.PlacesServiceStatus.OK) {
+            createMapMarker(results[0])
+          }
+        });
+      }
     }
-  }
-
-  // Sets the boundaries of the map based on pin locations
   window.mapBounds = new google.maps.LatLngBounds();
-
-  // locations is an array of location strings returned from locationFinder()
   locations = locationFinder();
-
-  // pinPoster(locations) creates pins on the map for each location in
-  // the locations array
   pinPoster(locations);
-  
 };
 
-/*
-Uncomment all the code below when you're ready to implement a Google Map!
-*/
-
-// Calls the initializeMap() function when the page loads
 window.addEventListener('load', initializeMap);
-
-// Vanilla JS way to listen for resizing of the window 
-// and adjust map bounds
 window.addEventListener('resize', function(e) {
-  // Make sure the map bounds get updated on page resize
 map.fitBounds(mapBounds);
 });
+
+google.load("visualization", "1", {packages:["corechart"]});
+google.setOnLoadCallback(drawChart);
+
+function drawChart() {
+  var data = google.visualization.arrayToDataTable([
+    ['Desc',      'h',                'v',        'Skills'],
+    ['HTML',         2004,              5,      'Technology'],
+    ['Lego Robotics',         2005,              10.5,      'Technology'],
+    ['Javascript',   2014,             7.5,      'Technology'],
+    ['Mentoring',    2005,              8,      'Interpersonal Skills'],
+    ['Jquery',    2013,              9.5,         'Technology'],
+    ['Req.Gathering',    2010,              7,       'Interpersonal Skills'],
+    ['HTML',    2008,              10,      'Technology'],
+    ['Git',    2014,              5,      'Technology'],
+    ['CSS',    2010,               9,      'Technology'],
+    ['Animation',    2009,              4,      'Program Management'],
+    ['C# & .Net', 2013,           7,    'Technology'  ],
+    ['CSS',   2014,     13,    'Technology'],
+    ['Self Motivated', 2012, 12, 'Interpersonal Skills'],
+    ['Team Oriented',  2010, 12, 'Interpersonal Skills'],
+    ['Critical Thinking', 2011, 9.5, 'Interpersonal Skills'],
+    ['Image Editing', 2007, 7, 'Technology'],
+    ['Adobe Flash', 2009, 6.5, 'Technology'],
+    ['Database', 2008, 5, 'Technology'],
+    ['MS Office', 2006, 6.5, 'Technology'],
+    ['HTML5', 2013, 13, 'Technology'],
+    ['MSSQL', 2006,4,'Technology'], 
+    ['Detail Oriented', 2014, 9.5,'Interpersonal Skills'],
+  ]);
+
+  var options = {
+    legend: { position: 'bottom', alignment:'in' },
+    sizeAxis: { minValue: 20, maxSize: 25},
+    title: '',
+    hAxis: {
+      title: '',
+      viewWindow: { min: 2004},
+    },
+    vAxis: {
+      title: 'Beginner--->Advanced',
+      textPosition:'none',
+      gridlines:{color: 'white'},
+      ticks: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15],
+    },
+    colors:['#D2004e','#fee202','f07400','pink'],
+    hAxis:{
+      format:'####',
+      gridlines:{color:'white'},
+      ticks: [2003,2004,2006,2008,2010,2012,2014,2015],
+    },
+    bubble: {
+      opacity:0.8,
+      size:10,
+      textStyle: {
+        auraColor: 'none',
+        fontSize: 8,
+      }
+    }
+  };
+  var chart = new google.visualization.BubbleChart(document.getElementById('noAura'));
+  chart.draw(data, options);
+};

@@ -12,11 +12,12 @@
 	<link href='http://fonts.googleapis.com/css?family=Noticia+Text' rel='stylesheet' type='text/css'>
 	<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places"></script>
 	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  	<script type="text/javascript" src="https://www.google.com/jsapi"></script>
 	<script src="bootstrap/js/bootstrap.min.js"></script>
 	<script src="js/jQuery.js"></script>
 	<script src="js/helper.js"></script>
-	
-</head>
+ </head>
 
 <body>
 	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -53,34 +54,39 @@
 		
 			<section id ="mainContent">
 				<div class="row">
-					<div class="col-md-6">	
-						<div id="biopic">
+					<article>
+						<div class="col-md-6">	
+							<div id="biopic">
+							</div>
 						</div>
-					</div>
-					<div class="col-md-6">
-						<div id="WelcomeMsg1"></div>
-						<div id="WelcomeMsg2"></div>
-						
-						<article id="imgNav">
-							<div class="row grow">
-								<div class="col-md-4">
-									<div id="imgRed"></div>
+					</article>
+					<article>
+						<div class="col-md-6">
+							<section>
+								<div id="WelcomeMsg1"></div>
+								<div id="WelcomeMsg2"></div>
+							</section>
+							<section id="imgNav" class="grow">
+								<div class="row">
+									<div class="col-md-4">
+										<div id="imgRed"></div>
+									</div>
+									<div class="col-md-4">
+										<div id="imgBlue"></div>
+									</div>
+									<div class="col-md-4">
+										<div id="imgOrange"></div>
+									</div>
 								</div>
-								<div class="col-md-4">
-									<div id="imgBlue"></div>
+							</section>
+							<section>
+								<div class="row">
+									<div id="WelcomeMsg3">
+									</div>								
 								</div>
-								<div class="col-md-4">
-									<div id="imgOrange"></div>
-								</div>
-							</div>
-						</article>
-						<article>
-							<div class="row">
-								<div id="WelcomeMsg3">
-								</div>								
-							</div>
-						</article>
-					</div>
+							</section>
+						</div>
+					</article>
 				</div>
 			</section>
 		</div> <!--close container -->
@@ -102,8 +108,38 @@
 
 			<section>
 				<div class="row">			
+					<article id="Skills"> <!-- Skills -->
+						<div class="col-sm-4">
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<span id="skillsstart"></span>
+								</div>
+								<div class="panel-body">
+									<div id="skills">
+									</div>
+								</div>
+							</div>
+						</div>
+					</article>
+					<aside >
+					<div class="col-sm-8"> <!--Skills Chart -->
+							<div class="panel panel-default">
+								<div class="panel-heading panel-title">
+									<h3>Skills Chart</h3>
+								</div>
+								<div class="panel-body">
+									<div id="noAura" class="chartStyle img-responsive"></div>
+								</div>
+							</div>
+						</div>
+					</aside>
+				</div>
+			</section>
+
+			<section>
+				<div class= "row">
 					<article> <!--Work Experience -->
-						<div class="col-sm-8">
+						<div class="col-sm-6">
 							<div class="panel panel-default">
 								<div class="panel-heading">
 									<h2 class="panel-title">Work Experience</h2>
@@ -115,24 +151,26 @@
 							</div>
 						</div>
 					</article>
-					<aside id="Skills"> <!-- Skills -->
-						<div class="col-sm-4">
+					<article> <!--Projects -->
+						<div class="col-sm-6">
 							<div class="panel panel-default">
 								<div class="panel-heading">
-									<h5 class="panel-title">Skills at a Glance</h5>
+									<h2 class="panel-title">Projects</h2>
 								</div>
 								<div class="panel-body">
-									<div id="skills">
+									<div id="projects">
 									</div>
 								</div>
 							</div>
 						</div>
-					</aside>
+					</article>
 				</div>
+			</section>
 
+			<section>
 				<div class="row">
 					<article id="education1"><!-- Education -->
-						<div class="col-sm-8">
+						<div class="col-sm-6">
 							<div class="panel panel-default">
 								<div class="panel-heading">
 									<h2 class="panel-title">Education</h2>
@@ -143,10 +181,10 @@
 						</div>
 					</article>
 					<aside id="wordWrap"><!-- online courses -->
-						<div class="col-sm-4">
+						<div class="col-sm-6">
 							<div class="panel panel-default">
 								<div class="panel-heading">
-									<h2 class="panel-title" id="onlineCoursesTitle"></h2>
+									<span id="onlineCourseStart"></span>
 								</div>
 								<div class="panel-body" id="onlineCourses">
 								</div>
@@ -159,12 +197,12 @@
 	</div>
 
 <!-- Map -->
-	<div id="theFooter map">
+	<div id="maparea map">
 		<div class="container">
 			<div class="row">
 				<article> <!--map -->
 					<div id="mapDiv">
-	      				<h2>Where I've Lived and Worked</h2>
+	      				<h2 id="maptitle">Where I've Lived and Worked</h2>
 	    			</div>
 				</article>
 			</div>
@@ -175,57 +213,51 @@
 		<div class="container">
 			<div class="row text-center">
 				<div class="col-sm-3 col-xs-6">
-					<i class="glyphicon glyphicon-envelope"> </i>
-					<h4>Contact:</h4>
-					<h6>anjalisubrat@gmail.com</h6>
+					<div id="emailid"></div>
 				</div>
 				<div class="col-sm-3 col-xs-6">
-					<i class="glyphicon glyphicon-phone-alt"> </i>
-					<h4>Call:</h4>
-					<h6>T:518-253-4742</h6>
+					<div id="mobile"></div>
 				</div>
 				<div class="col-sm-3 col-xs-6">
-					<i class="glyphicon glyphicon-plus-sign"> </i>
-					<h6>Follow me</h6>
+					<div id ="followMe"></div>
+					<span id = "linkedin"></span>
+					<span id = "github"></span>
 				</div>
 				<div class="col-sm-3 col-xs-6">
-					<i class="glyphicon glyphicon-copyright-mark"> </i>
-					<h6>2014 Anjali Nanda</h6>
+					<div id ="copyright"></div>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
 	
-	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	 <script src="js/resumeBuilder.js"></script>
-
+	
+	<script src="js/resumeBuilder.js"></script>
 	 <script type="text/javascript">
-		 if(document.getElementsByClassName("flex-item").length === 0) {
-	     document.getElementById("topContacts").style.display = "none";
-		 }
-		 if(document.getElementsByTagName("h1").length === 0) {
-		 document.getElementById("header").style.display= "none";
-		 }
-		 if(document.getElementsByClassName("work-entry").length === 0) {
-		 document.getElementById("workExperience").style.display= "none";
-		 }
-		 if(document.getElementsByClassName("project-entry").length === 0) {
-		 document.getElementById("projects").style.display= "none";
-		 }
-		 if(document.getElementsByClassName("education-entry").length === 0) {
-		 document.getElementById("education").style.display= "none";
+	 	if(document.getElementsByClassName("flex-item").length === 0) {
+    	document.getElementById("topContacts").style.display = "none";
+ 		 }
+  		if(document.getElementsByTagName("h1").length === 0) {
+    	document.getElementById("header").style.display= "none";
+  		}
+  		if(document.getElementsByClassName("work-entry").length === 0) {
+    	document.getElementById("workExperience").style.display= "none";
+  		}
+  		if(document.getElementsByClassName("project-entry").length === 0) {
+    	document.getElementById("projects").style.display= "none";
+  		}
+  		if(document.getElementsByClassName("education-entry").length === 0) {
+    	document.getElementById("education").style.display= "none";
 
-		if(document.getElementsByClassName("skills-entry").length === 0) {
-		document.getElementById("skillsChart").style.display= "none";
-		}
-		if(document.getElementsByClassName("flex-item").length === 0) {
-		document.getElementById("letsConnect").style.display= "none";
+  		if(document.getElementsByClassName("skills-entry").length === 0) {
+    	document.getElementById("skillsChart").style.display= "none";
+  		}
+  		if(document.getElementsByClassName("flex-item").length === 0) {
+    	document.getElementById("letsConnect").style.display= "none";
 
-		if(document.getElementById("map") == undefined) {
-		document.getElementById("mapDiv").style.display= "none";
-		}
+  		if(document.getElementById("map") == undefined) {
+    	document.getElementById("mapDiv").style.display= "none";
+  		}
     </script>
 
 </body>
